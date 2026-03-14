@@ -91,52 +91,22 @@
   },
   "articles": [
     {
-      "title": "Do Things That Don't Scale",
-      "url": "http://paulgraham.com/ds.html",
-      "source": "Paul Graham",
-      "topic": "Entrepreneurship"
+      "title": "Why Decentralization Matters",
+      "url": "https://onezero.medium.com/why-decentralization-matters-5e3f79f7638e",
+      "source": "Chris Dixon (a16z)",
+      "topic": "Crypto / Web3"
     },
     {
-      "title": "How to Be Successful",
-      "url": "https://blog.samaltman.com/how-to-be-successful",
-      "source": "Sam Altman",
-      "topic": "Success"
-    },
-    {
-      "title": "How to Get Rich (No Luck Required)",
-      "url": "https://nav.al/rich",
-      "source": "Naval Ravikant",
-      "topic": "Wealth"
-    },
-    {
-      "title": "The Pmarca Guide to Startups",
-      "url": "https://pmarchive.com/guide_to_startups_part1.html",
-      "source": "Marc Andreessen",
-      "topic": "Startups"
-    },
-    {
-      "title": "1,000 True Fans",
-      "url": "https://kk.org/thetechnium/1000-true-fans/",
-      "source": "Kevin Kelly",
-      "topic": "Brand Building"
-    },
-    {
-      "title": "The Anatomy of a Great Brand",
+      "title": "Status as a Service — How Social Networks Really Work",
       "url": "https://www.eugenewei.com/blog/2019/2/19/status-as-a-service",
       "source": "Eugene Wei",
-      "topic": "Status & Brand"
+      "topic": "Brand / Social"
     },
     {
-      "title": "Positioning: The Battle for Your Mind (summary)",
-      "url": "https://fs.blog/positioning/",
-      "source": "Farnam Street",
-      "topic": "Marketing"
-    },
-    {
-      "title": "The Intelligent Investor — Key Lessons",
-      "url": "https://fs.blog/the-intelligent-investor/",
-      "source": "Farnam Street",
-      "topic": "Investing"
+      "title": "The Petrodollar System Explained",
+      "url": "https://wtfhappenedin1971.com/",
+      "source": "WTF Happened in 1971",
+      "topic": "Politics / Economics"
     },
     {
       "title": "Why Supreme Is Worth $1 Billion",
@@ -145,34 +115,148 @@
       "topic": "Streetwear / Brand"
     },
     {
-      "title": "The Courage to Be Disliked (summary)",
-      "url": "https://fs.blog/the-courage-to-be-disliked/",
-      "source": "Farnam Street",
-      "topic": "Personal Growth"
+      "title": "The Network Effects Bible",
+      "url": "https://www.nfx.com/post/network-effects-bible",
+      "source": "NFX",
+      "topic": "Business Strategy"
     },
     {
-      "title": "How Brands Are Built Through Community",
-      "url": "https://www.profgalloway.com/brand/",
-      "source": "Scott Galloway",
+      "title": "An Introduction to CryptoPunks — The Original NFT",
+      "url": "https://decrypt.co/33828/cryptopunks-complete-guide",
+      "source": "Decrypt",
+      "topic": "Crypto / NFTs"
+    },
+    {
+      "title": "Do Things That Don't Scale",
+      "url": "http://paulgraham.com/ds.html",
+      "source": "Paul Graham",
+      "topic": "⭐ Weekly Motivational"
+    },
+    {
+      "title": "How the Federal Reserve Actually Works",
+      "url": "https://www.stlouisfed.org/in-plain-english/the-fed-and-interest-rates",
+      "source": "St. Louis Fed",
+      "topic": "Economics / Politics"
+    },
+    {
+      "title": "Vitalik Buterin: The Meaning of Decentralization",
+      "url": "https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274",
+      "source": "Vitalik Buterin",
+      "topic": "Crypto / Web3"
+    },
+    {
+      "title": "How Streetwear Went From the Streets to the Runway",
+      "url": "https://www.nytimes.com/2019/02/13/t-magazine/streetwear-history.html",
+      "source": "NY Times",
+      "topic": "Streetwear / Culture"
+    },
+    {
+      "title": "1,000 True Fans — The Math Behind a Real Business",
+      "url": "https://kk.org/thetechnium/1000-true-fans/",
+      "source": "Kevin Kelly",
       "topic": "Brand Building"
     },
     {
-      "title": "The Psychology of Money: A Summary",
+      "title": "The Rise and Fall of the Petro-States",
+      "url": "https://foreignpolicy.com/2020/04/22/oil-price-collapse-saudi-arabia-russia-opec/",
+      "source": "Foreign Policy",
+      "topic": "Politics / Oil"
+    },
+    {
+      "title": "What Is DeFi and Why Does It Matter?",
+      "url": "https://www.coindesk.com/learn/what-is-defi/",
+      "source": "CoinDesk",
+      "topic": "Crypto / DeFi"
+    },
+    {
+      "title": "How to Get Rich (No Luck Required)",
+      "url": "https://nav.al/rich",
+      "source": "Naval Ravikant",
+      "topic": "⭐ Weekly Motivational"
+    },
+    {
+      "title": "How Off-White Built a Billion Dollar Streetwear Empire",
+      "url": "https://hypebeast.com/2021/11/off-white-virgil-abloh-legacy-retrospective",
+      "source": "Hypebeast",
+      "topic": "Streetwear / Brand"
+    },
+    {
+      "title": "Dollar Dominance: What Happens When It Ends?",
+      "url": "https://www.cfr.org/backgrounder/dollar-dominance-international-finance",
+      "source": "Council on Foreign Relations",
+      "topic": "Politics / Economics"
+    },
+    {
+      "title": "The Smart Money Concept Explained (SMC Trading)",
+      "url": "https://www.investopedia.com/smart-money-concept-7549455",
+      "source": "Investopedia",
+      "topic": "Investing / Trading"
+    },
+    {
+      "title": "A History of Bitcoin — From Pizza to $1 Trillion",
+      "url": "https://decrypt.co/36125/bitcoin-history-price-since-2009",
+      "source": "Decrypt",
+      "topic": "Crypto / Bitcoin"
+    },
+    {
+      "title": "How Kanye Turned Yeezy Into a $1.5B Brand",
+      "url": "https://www.businessoffashion.com/articles/retail/the-business-of-yeezy",
+      "source": "Business of Fashion",
+      "topic": "Streetwear / Brand"
+    },
+    {
+      "title": "The Pmarca Guide to Startups",
+      "url": "https://pmarchive.com/guide_to_startups_part1.html",
+      "source": "Marc Andreessen",
+      "topic": "⭐ Weekly Motivational"
+    },
+    {
+      "title": "What Is Happening to the Middle East (and Why Oil Matters)",
+      "url": "https://www.economist.com/middle-east-and-africa",
+      "source": "The Economist",
+      "topic": "Politics / World"
+    },
+    {
+      "title": "How Options Work — A Plain English Guide",
+      "url": "https://www.investopedia.com/options-basics-tutorial-4583012",
+      "source": "Investopedia",
+      "topic": "Investing / Options"
+    },
+    {
+      "title": "The Solana vs Ethereum Debate",
+      "url": "https://coinmarketcap.com/alexandria/article/solana-vs-ethereum",
+      "source": "CoinMarketCap",
+      "topic": "Crypto / Web3"
+    },
+    {
+      "title": "Why Tariffs Are Back and What It Means for You",
+      "url": "https://www.brookings.edu/articles/what-everyone-should-know-about-trade-policy/",
+      "source": "Brookings Institution",
+      "topic": "Politics / Trade"
+    },
+    {
+      "title": "How Travis Scott Built Cactus Jack Into a Movement",
+      "url": "https://hypebeast.com/2021/4/travis-scott-cactus-jack-brand-identity-explainer",
+      "source": "Hypebeast",
+      "topic": "Streetwear / Culture"
+    },
+    {
+      "title": "The Psychology of Money",
       "url": "https://collabfund.com/blog/the-psychology-of-money/",
       "source": "Morgan Housel",
-      "topic": "Investing / Money"
+      "topic": "⭐ Weekly Motivational"
     },
     {
-      "title": "Keep Your Identity Small",
-      "url": "http://paulgraham.com/identity.html",
-      "source": "Paul Graham",
-      "topic": "Mindset"
+      "title": "What Happens to an Economy When Oil Gets Cheap",
+      "url": "https://www.bbc.com/news/business-29643612",
+      "source": "BBC",
+      "topic": "Economics / Energy"
     },
     {
-      "title": "The Diffusion of Innovation (and why timing matters)",
-      "url": "https://fs.blog/innovation-adoption-curve/",
-      "source": "Farnam Street",
-      "topic": "Strategy"
+      "title": "NFTs: What Are They and Why Do They Matter?",
+      "url": "https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq",
+      "source": "The Verge",
+      "topic": "Crypto / NFTs"
     }
   ]
 }
