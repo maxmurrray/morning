@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Good Morning, Max</title>
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --card: #FFFFFF;
+      --text: #111111;
+      --soft: #6B7280;
+      --border: #E5E7EB;
+      --check: #16A34A;
+      --check-bg: #DCFCE7;
+      --streak: #EA580C;
+      --streak-bg: #FFF7ED;
+      --blue: #2563EB;
+      --blue-bg: #EFF6FF;
+      --radius: 16px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--card);
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .date-line {
+      font-size: 13px;
+      color: var(--soft);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .greeting {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .progress-bar-wrap {
+      margin-top: 14px;
+      background: var(--border);
+      border-radius: 99px;
+      height: 6px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      border-radius: 99px;
+      background: var(--check);
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    .progress-label {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--soft);
+      font-weight: 500;
+    }
+
+    /* ── Wake time ── */
+    .wake-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      margin: 16px 16px 0;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .wake-emoji { font-size: 22px; }
+    .wake-label { flex: 1; font-size: 15px; font-weight: 500; }
+    .wake-input {
+      border: none;
+      background: var(--blue-bg);
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 6px 10px;
+      width: 90px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .wake-input:focus { outline: 2px solid var(--blue); }
+
+    /* ── Streak badges ── */
+    .streaks {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .streaks::-webkit-scrollbar { display: none; }
+    .streak-badge {
+      background: var(--streak-bg);
+      color: var(--streak);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 99px;
+      padding: 5px 12px;
+      white-space: nowrap;
+      border: 1px solid #FED7AA;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin: 16px 16px 0;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 8px;
+      padding: 0 4px;
+    }
+    .habits-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    /* ── Habit row ── */
+    .habit-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 16px;
+      cursor: pointer;
+      transition: background 0.15s;
+      user-select: none;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .habit-row:last-child { border-bottom: none; }
+    .habit-row:active { background: #F9FAFB; }
+    .habit-row.done { background: #F0FDF4; }
+
+    .habit-emoji { font-size: 21px; width: 28px; text-align: center; flex-shrink: 0; }
+    .habit-info { flex: 1; }
+    .habit-label {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .habit-row.done .habit-label { color: var(--check); }
+    .habit-sub {
+      font-size: 12px;
+      color: var(--soft);
+      margin-top: 1px;
+    }
+
+    /* Custom checkbox */
+    .habit-check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      background: white;
+    }
+    .habit-row.done .habit-check {
+      background: var(--check);
+      border-color: var(--check);
+    }
+    .checkmark {
+      width: 12px;
+      height: 12px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .habit-row.done .checkmark { opacity: 1; }
+
+    /* Sub-item (workout type input) */
+    .workout-input-wrap {
+      padding: 0 16px 14px 56px;
+      background: #F0FDF4;
+      display: none;
+    }
+    .workout-input-wrap.visible { display: block; }
+    .workout-input {
+      width: 100%;
+      border: 1px solid #BBF7D0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      background: white;
+      color: var(--text);
+      outline: none;
+    }
+    .workout-input:focus { border-color: var(--check); }
+
+    /* ── Notes ── */
+    .notes-section {
+      margin: 16px 16px 0;
+    }
+    .notes-textarea {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      resize: none;
+      outline: none;
+      box-shadow: var(--shadow);
+      min-height: 80px;
+    }
+    .notes-textarea:focus { border-color: #9CA3AF; }
+    .notes-textarea::placeholder { color: #D1D5DB; }
+
+    /* ── Footer ── */
+    .footer { height: 40px; }
+
+    /* ── Loading ── */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100dvh;
+      gap: 12px;
+      color: var(--soft);
+      font-size: 14px;
+    }
+    .spinner {
+      width: 28px; height: 28px;
+      border: 3px solid var(--border);
+      border-top-color: var(--text);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── All done banner ── */
+    .all-done {
+      display: none;
+      margin: 16px;
+      background: var(--check);
+      color: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .all-done.visible { display: block; }
+
+    /* ── Tap animation ── */
+    @keyframes pop {
+      0% { transform: scale(1); }
+      40% { transform: scale(0.88); }
+      100% { transform: scale(1); }
+    }
+    .habit-row:active .habit-check { animation: pop 0.2s ease; }
+  </style>
+</head>
+<body>
+
+<div id="loading" class="loading">
+  <div class="spinner"></div>
+  <span>Loading your day…</span>
+</div>
+
+<div id="app" style="display:none;">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="date-line" id="date-line">—</div>
+    <div class="greeting" id="greeting">Good morning, Max 👋</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="progress-label" id="progress-label">0 of 0 done</div>
+  </div>
+
+  <!-- Wake time -->
+  <div class="wake-row">
+    <span class="wake-emoji">⏰</span>
+    <span class="wake-label">Wake time</span>
+    <input type="time" class="wake-input" id="wake-input" placeholder="—">
+  </div>
+
+  <!-- Streaks -->
+  <div class="streaks" id="streaks"></div>
+
+  <!-- Habits injected by JS -->
+  <div id="habit-sections"></div>
+
+  <!-- Notes -->
+  <div class="notes-section">
+    <div class="section-title">Notes</div>
+    <textarea class="notes-textarea" id="notes-input" placeholder="How's today going?"></textarea>
+  </div>
+
+  <!-- All done -->
+  <div class="all-done" id="all-done">🏆 That's a full day. Proud of you.</div>
+
+  <div class="footer"></div>
+</div>
+
+<script>
+let pageId = null;
+let habitState = {};
+let saveTimer = {};
+
+// ── Habit definitions ──────────────────────────────────────────
+const dow = new Date().getDay(); // 0=Sun,1=Mon,...6=Sat
+
+const SECTIONS = [
+  {
+    title: '🌅 Morning',
+    habits: [
+      { key: 'spiritual', emoji: '🙏', label: 'Spiritual practice', sub: 'Prayer, your book, or quiet reflection', notion: '🙏 Spiritual Practice' },
+    ]
+  },
+  {
+    title: '🧠 Mind',
+    habits: [
+      { key: 'meditate', emoji: '🧘', label: 'Meditate', sub: 'Even 5 minutes counts', notion: '🧘 Meditate' },
+      { key: 'journal',  emoji: '📓', label: 'Journal',  sub: 'Write something real', notion: '📓 Journal' },
+      { key: 'read',     emoji: '📖', label: 'Read',     sub: 'Book, article, anything intentional', notion: '📖 Read' },
+      { key: 'learn',    emoji: '💡', label: 'Learn something', sub: 'Brand, investing, craft', notion: '💡 Learned Something' },
+    ]
+  },
+  {
+    title: '💪 Body',
+    habits: [
+      { key: 'workout', emoji: '🏋️', label: 'Workout', sub: 'Gym, plyo, calisthenics', notion: '🏋️ Workout', hasNote: true },
+      ...(([1,3,5].includes(dow)) ? [{ key: 'coldShower', emoji: '🚿', label: 'Cold shower', sub: 'Mon / Wed / Fri', notion: '🚿 Cold Shower' }] : []),
+      { key: 'eat', emoji: '🥗', label: 'Ate healthy', sub: 'Protein up, junk down', notion: '🥗 Ate Healthy' },
+    ]
+  },
+  {
+    title: '💼 Work',
+    habits: [
+      { key: 'value', emoji: '💼', label: 'Created value', sub: 'PA, Web Studio, Punksierge, or learning', notion: '💼 Created Value' },
+    ]
+  },
+  {
+    title: '🔒 Keep Clean',
+    habits: [
+      { key: 'weedFree', emoji: '✊', label: 'Weed-free', sub: 'Hold the line', notion: '🚫 Weed-Free' },
+      { key: 'phone',    emoji: '📵', label: 'Phone controlled', sub: 'No phone 20 min after waking', notion: '📵 Phone Controlled' },
+      { key: 'noPorn',   emoji: '🔒', label: 'No porn', notion: '🚫 No Porn' },
+    ]
+  }
+];
+
+// All habit keys in order (for progress calc)
+const ALL_KEYS = SECTIONS.flatMap(s => s.habits.map(h => h.key));
+
+// ── Build UI ──────────────────────────────────────────────────
+function buildSections() {
+  const container = document.getElementById('habit-sections');
+  SECTIONS.forEach(sec => {
+    if (sec.habits.length === 0) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'section';
+    wrap.innerHTML = `<div class="section-title">${sec.title}</div>`;
+    const card = document.createElement('div');
+    card.className = 'habits-card';
+    sec.habits.forEach(h => {
+      // Main row
+      const row = document.createElement('div');
+      row.className = 'habit-row';
+      row.id = `row-${h.key}`;
+      row.innerHTML = `
+        <span class="habit-emoji">${h.emoji}</span>
+        <div class="habit-info">
+          <div class="habit-label">${h.label}</div>
+          ${h.sub ? `<div class="habit-sub">${h.sub}</div>` : ''}
+        </div>
+        <div class="habit-check">
+          <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      `;
+      row.addEventListener('click', () => toggleHabit(h));
+      card.appendChild(row);
+
+      // Workout type input (shown when workout is checked)
+      if (h.hasNote) {
+        const inputWrap = document.createElement('div');
+        inputWrap.className = 'workout-input-wrap';
+        inputWrap.id = 'workout-input-wrap';
+        inputWrap.innerHTML = `<input type="text" class="workout-input" id="workout-type-input" placeholder="What did you do? (e.g. Push day, Plyometrics…)">`;
+        card.appendChild(inputWrap);
+      }
+    });
+    wrap.appendChild(card);
+    container.appendChild(wrap);
+  });
+}
+
+// ── Toggle habit ─────────────────────────────────────────────
+async function toggleHabit(habit) {
+  const newVal = !habitState[habit.key];
+  habitState[habit.key] = newVal;
+  updateRow(habit.key, newVal);
+  updateProgress();
+
+  if (habit.key === 'workout') {
+    document.getElementById('workout-input-wrap').classList.toggle('visible', newVal);
+  }
+
+  await save(habit.notion, newVal, 'checkbox');
+}
+
+function updateRow(key, val) {
+  const row = document.getElementById(`row-${key}`);
+  if (row) row.classList.toggle('done', val);
+}
+
+// ── Progress ──────────────────────────────────────────────────
+function updateProgress() {
+  const total = ALL_KEYS.length;
+  const done  = ALL_KEYS.filter(k => habitState[k]).length;
+  const pct   = total > 0 ? Math.round((done / total) * 100) : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = `${done} of ${total} done`;
+  document.getElementById('all-done').classList.toggle('visible', done === total && total > 0);
+}
+
+// ── Greeting + date ───────────────────────────────────────────
+function setHeader() {
+  const now = new Date();
+  const h = now.getHours();
+  const greeting = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+  document.getElementById('greeting').textContent = `${greeting}, Max 👋`;
+  document.getElementById('date-line').textContent = now.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric'
+  });
+}
+
+// ── Streaks ───────────────────────────────────────────────────
+function setStreaks(habits) {
+  // For now, show weed-free Day X based on hardcoded start date (March 14 = Day 1)
+  const start = new Date('2026-03-14');
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  start.setHours(0,0,0,0);
+  const dayNum = Math.max(1, Math.round((today - start) / 86400000) + 1);
+
+  const container = document.getElementById('streaks');
+  const badges = [
+    `🔥 Day ${dayNum} weed-free`,
+  ];
+  container.innerHTML = badges.map(b => `<span class="streak-badge">${b}</span>`).join('');
+}
+
+// ── Save to Notion ────────────────────────────────────────────
+async function save(notion, value, type) {
+  if (!pageId) return;
+  try {
+    await fetch('/api/update', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pageId, property: notion, value, type })
+    });
+  } catch (e) { /* silent fail */ }
+}
+
+function debounce(fn, ms) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+// ── Load today ────────────────────────────────────────────────
+async function loadToday() {
+  try {
+    const res = await fetch('/api/today');
+    const data = await res.json();
+    pageId = data.pageId;
+
+    // Set habit state
+    const h = data.habits;
+    habitState = {
+      spiritual: h.spiritual,
+      meditate:  h.meditate,
+      journal:   h.journal,
+      read:      h.read,
+      learn:     h.learn,
+      eat:       h.eat,
+      workout:   h.workout,
+      coldShower:h.coldShower,
+      weedFree:  h.weedFree,
+      phone:     h.phone,
+      noPorn:    h.noPorn,
+      value:     h.value,
+    };
+
+    // Render rows
+    ALL_KEYS.forEach(key => updateRow(key, habitState[key]));
+
+    // Wake time
+    if (h.wakeTime) document.getElementById('wake-input').value = h.wakeTime;
+    if (h.workout && document.getElementById('workout-input-wrap')) {
+      document.getElementById('workout-input-wrap').classList.add('visible');
+    }
+    if (h.workoutType) document.getElementById('workout-type-input').value = h.workoutType;
+    if (h.notes) document.getElementById('notes-input').value = h.notes;
+
+    setStreaks(h);
+    updateProgress();
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+  } catch(e) {
+    document.getElementById('loading').innerHTML = '<div style="padding:40px;text-align:center;color:#6B7280;">Couldn\'t load today.<br>Check your connection.</div>';
+  }
+}
+
+// ── Wire up text inputs ───────────────────────────────────────
+const saveWake = debounce((val) => save('Wake Time', val, 'text'), 1000);
+const saveWorkoutType = debounce((val) => save('Workout Type', val, 'text'), 1000);
+const saveNotes = debounce((val) => save('Notes', val, 'text'), 1500);
+
+// ── Init ──────────────────────────────────────────────────────
+setHeader();
+buildSections();
+loadToday();
+
+// Wire up inputs after build
+document.getElementById('wake-input').addEventListener('change', e => saveWake(e.target.value));
+document.getElementById('notes-input').addEventListener('input', e => saveNotes(e.target.value));
+
+// Workout type input wired after DOM build
+setTimeout(() => {
+  const wti = document.getElementById('workout-type-input');
+  if (wti) wti.addEventListener('input', e => saveWorkoutType(e.target.value));
+}, 100);
+</script>
+</body>
+</html>
