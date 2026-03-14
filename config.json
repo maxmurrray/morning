@@ -69,6 +69,10 @@
       "20 min beginner session — YouTube: 'Yoga With Adriene for Beginners'",
       "Don't overthink it, just follow along"
     ],
+    "retainer": [
+      "Wear it for {{retainer_hours}} hour{{retainer_plural}} today",
+      "Cap is 5 hours — you're building up to it"
+    ],
     "value": [
       "Worked on PA, Web Studio, or Punksierge",
       "OR: read something that made you better at your work"
