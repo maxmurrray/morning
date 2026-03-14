@@ -1,0 +1,166 @@
+{
+  "_note": "Update week every 2 weeks. Screen time drops 0.5h/week. Update tasks/targets as Max levels up.",
+  "week": 1,
+  "startDate": "2026-03-14",
+  "targets": {
+    "calories": 2000,
+    "protein": 140,
+    "workout_minutes": 30,
+    "pushups": 100,
+    "cold_shower_seconds": 30,
+    "pages_code_per_day": 8,
+    "screen_time_goal_hours": 9.0
+  },
+  "books": {
+    "code": {
+      "title": "Code",
+      "author": "Charles Petzold",
+      "total_pages": 699,
+      "current_page": 0
+    },
+    "spiritual": {
+      "title": "Spiritual Book",
+      "author": "TBD",
+      "total_pages": 300,
+      "current_page": 0
+    }
+  },
+  "tasks": {
+    "spiritual": [
+      "Open your book — read 5 pages",
+      "Sit quietly for 2 minutes",
+      "Name one thing you're grateful for"
+    ],
+    "meditate": [
+      "5 minutes — close your eyes, just breathe",
+      "No phone before this"
+    ],
+    "journal": [
+      "How do you feel right now?",
+      "One goal for today",
+      "One thing you're proud of"
+    ],
+    "read": [
+      "8 pages of Code by Petzold",
+      "No distractions — just the book"
+    ],
+    "learn": [
+      "Read today's article (link in your morning text)"
+    ],
+    "eat": [
+      "Hit ~2,000 calories today",
+      "Get 140g+ protein",
+      "Drink water throughout the day"
+    ],
+    "workout": [
+      "Minimum 30 minutes",
+      "100 push-ups (spread throughout the day is fine)",
+      "Log what type of workout"
+    ],
+    "coldShower": [
+      "End your shower with 30 seconds cold",
+      "Just breathe through it — it gets easier"
+    ],
+    "value": [
+      "Worked on PA, Web Studio, or Punksierge",
+      "OR: read something that made you better at your work"
+    ],
+    "weedFree": [
+      "You're resetting. Don't.",
+      "If the urge hits — do 20 push-ups instead"
+    ],
+    "phone": [
+      "No phone for first 20 min after waking",
+      "Log your screen time below — goal: under 9h"
+    ],
+    "noPorn": [
+      "Don't. You already know why."
+    ]
+  },
+  "articles": [
+    {
+      "title": "Do Things That Don't Scale",
+      "url": "http://paulgraham.com/ds.html",
+      "source": "Paul Graham",
+      "topic": "Entrepreneurship"
+    },
+    {
+      "title": "How to Be Successful",
+      "url": "https://blog.samaltman.com/how-to-be-successful",
+      "source": "Sam Altman",
+      "topic": "Success"
+    },
+    {
+      "title": "How to Get Rich (No Luck Required)",
+      "url": "https://nav.al/rich",
+      "source": "Naval Ravikant",
+      "topic": "Wealth"
+    },
+    {
+      "title": "The Pmarca Guide to Startups",
+      "url": "https://pmarchive.com/guide_to_startups_part1.html",
+      "source": "Marc Andreessen",
+      "topic": "Startups"
+    },
+    {
+      "title": "1,000 True Fans",
+      "url": "https://kk.org/thetechnium/1000-true-fans/",
+      "source": "Kevin Kelly",
+      "topic": "Brand Building"
+    },
+    {
+      "title": "The Anatomy of a Great Brand",
+      "url": "https://www.eugenewei.com/blog/2019/2/19/status-as-a-service",
+      "source": "Eugene Wei",
+      "topic": "Status & Brand"
+    },
+    {
+      "title": "Positioning: The Battle for Your Mind (summary)",
+      "url": "https://fs.blog/positioning/",
+      "source": "Farnam Street",
+      "topic": "Marketing"
+    },
+    {
+      "title": "The Intelligent Investor — Key Lessons",
+      "url": "https://fs.blog/the-intelligent-investor/",
+      "source": "Farnam Street",
+      "topic": "Investing"
+    },
+    {
+      "title": "Why Supreme Is Worth $1 Billion",
+      "url": "https://www.businessoffashion.com/articles/retail/how-supreme-conquered-the-world",
+      "source": "Business of Fashion",
+      "topic": "Streetwear / Brand"
+    },
+    {
+      "title": "The Courage to Be Disliked (summary)",
+      "url": "https://fs.blog/the-courage-to-be-disliked/",
+      "source": "Farnam Street",
+      "topic": "Personal Growth"
+    },
+    {
+      "title": "How Brands Are Built Through Community",
+      "url": "https://www.profgalloway.com/brand/",
+      "source": "Scott Galloway",
+      "topic": "Brand Building"
+    },
+    {
+      "title": "The Psychology of Money: A Summary",
+      "url": "https://collabfund.com/blog/the-psychology-of-money/",
+      "source": "Morgan Housel",
+      "topic": "Investing / Money"
+    },
+    {
+      "title": "Keep Your Identity Small",
+      "url": "http://paulgraham.com/identity.html",
+      "source": "Paul Graham",
+      "topic": "Mindset"
+    },
+    {
+      "title": "The Diffusion of Innovation (and why timing matters)",
+      "url": "https://fs.blog/innovation-adoption-curve/",
+      "source": "Farnam Street",
+      "topic": "Strategy"
+    }
+  ]
+}

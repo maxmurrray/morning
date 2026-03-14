@@ -5,8 +5,7 @@ module.exports = async function handler(req, res) {
 
   const NOTION_KEY = process.env.NOTION_KEY;
   const DB_ID = process.env.TRACKER_DB_ID;
-
-  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }); // YYYY-MM-DD in ET
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
 
   const headers = {
     'Authorization': `Bearer ${NOTION_KEY}`,
@@ -14,7 +13,6 @@ module.exports = async function handler(req, res) {
     'Content-Type': 'application/json',
   };
 
-  // Check for existing entry
   const qRes = await fetch(`https://api.notion.com/v1/databases/${DB_ID}/query`, {
     method: 'POST', headers,
     body: JSON.stringify({ filter: { property: 'Date', title: { equals: today } } })
@@ -36,28 +34,31 @@ module.exports = async function handler(req, res) {
   }
 
   const p = page.properties || {};
-  const chk = (k) => p[k] && p[k].checkbox || false;
-  const txt = (k) => p[k] && p[k].rich_text && p[k].rich_text[0] && p[k].rich_text[0].plain_text || '';
+  const chk = (k) => (p[k] && p[k].checkbox) || false;
+  const txt = (k) => (p[k] && p[k].rich_text && p[k].rich_text[0] && p[k].rich_text[0].plain_text) || '';
+  const num = (k) => (p[k] && p[k].number) || null;
 
   return res.json({
     pageId: page.id,
     date: today,
     habits: {
-      spiritual:   chk('🙏 Spiritual Practice'),
-      meditate:    chk('🧘 Meditate'),
-      journal:     chk('📓 Journal'),
-      read:        chk('📖 Read'),
-      learn:       chk('💡 Learned Something'),
-      eat:         chk('🥗 Ate Healthy'),
-      workout:     chk('🏋️ Workout'),
-      workoutType: txt('Workout Type'),
-      coldShower:  chk('🚿 Cold Shower'),
-      weedFree:    chk('🚫 Weed-Free'),
-      phone:       chk('📵 Phone Controlled'),
-      noPorn:      chk('🚫 No Porn'),
-      value:       chk('💼 Created Value'),
-      wakeTime:    txt('Wake Time'),
-      notes:       txt('Notes'),
+      spiritual:    chk('🙏 Spiritual Practice'),
+      meditate:     chk('🧘 Meditate'),
+      journal:      chk('📓 Journal'),
+      read:         chk('📖 Read'),
+      learn:        chk('💡 Learned Something'),
+      eat:          chk('🥗 Ate Healthy'),
+      workout:      chk('🏋️ Workout'),
+      workoutType:  txt('Workout Type'),
+      coldShower:   chk('🚿 Cold Shower'),
+      weedFree:     chk('🚫 Weed-Free'),
+      phone:        chk('📵 Phone Controlled'),
+      noPorn:       chk('🚫 No Porn'),
+      value:        chk('💼 Created Value'),
+      wakeTime:     txt('Wake Time'),
+      notes:        txt('Notes'),
+      pagesCode:    num('📖 Pages Read (Code)'),
+      screenTime:   num('📱 Screen Time (hrs)'),
     }
   });
 };
