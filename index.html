@@ -275,6 +275,8 @@ const SECTIONS = [
   { title: '💪 Body', habits: [
     { key:'workout',    emoji:'🏋️', label:'Workout',    notionKey:'🏋️ Workout', hasNote:true },
     { key:'coldShower', emoji:'🚿', label:'Cold shower', notionKey:'🚿 Cold Shower', coldOnly:true },
+    { key:'stretch',    emoji:'🤸', label:'Stretch',     notionKey:'🧘 Stretch', daily:true },
+    { key:'yoga',       emoji:'🧘', label:'Yoga',        notionKey:'🧘 Yoga', yogaOnly:true },
     { key:'eat',        emoji:'🥗', label:'Ate healthy', notionKey:'🥗 Ate Healthy' },
   ]},
   { title: '💼 Work', habits: [
@@ -289,13 +291,21 @@ const SECTIONS = [
 
 const dow = new Date().getDay(); // 0=Sun,1=Mon,...
 const ALL_KEYS = SECTIONS.flatMap(s =>
-  s.habits.filter(h => !h.coldOnly || [1,3,5].includes(dow)).map(h => h.key)
+  s.habits.filter(h => {
+    if (h.coldOnly) return [1,3,5].includes(dow);
+    if (h.yogaOnly) return dow === 0; // Sundays only
+    return true;
+  }).map(h => h.key)
 );
 
 function buildUI() {
   const container = document.getElementById('habit-sections');
   SECTIONS.forEach(sec => {
-    const visHabits = sec.habits.filter(h => !h.coldOnly || [1,3,5].includes(dow));
+    const visHabits = sec.habits.filter(h => {
+      if (h.coldOnly) return [1,3,5].includes(dow);
+      if (h.yogaOnly) return dow === 0;
+      return true;
+    });
     if (!visHabits.length) return;
 
     const wrap = document.createElement('div');
@@ -439,7 +449,8 @@ async function init() {
     state = {
       spiritual: h.spiritual, meditate: h.meditate, journal: h.journal,
       read: h.read, learn: h.learn, eat: h.eat, workout: h.workout,
-      coldShower: h.coldShower, weedFree: h.weedFree, phone: h.phone,
+      coldShower: h.coldShower, stretch: h.stretch, yoga: h.yoga,
+      weedFree: h.weedFree, phone: h.phone,
       noPorn: h.noPorn, value: h.value,
     };
 

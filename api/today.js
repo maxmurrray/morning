@@ -51,6 +51,8 @@ module.exports = async function handler(req, res) {
       workout:      chk('🏋️ Workout'),
       workoutType:  txt('Workout Type'),
       coldShower:   chk('🚿 Cold Shower'),
+      stretch:      chk('🧘 Stretch'),
+      yoga:         chk('🧘 Yoga'),
       weedFree:     chk('🚫 Weed-Free'),
       phone:        chk('📵 Phone Controlled'),
       noPorn:       chk('🚫 No Porn'),
