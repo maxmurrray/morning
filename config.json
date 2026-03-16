@@ -27,12 +27,12 @@
   },
   "tasks": {
     "spiritual": [
-      "Open your book — read 5 pages",
+      "Open your book \u2014 read 5 pages",
       "Sit quietly for 2 minutes",
       "Name one thing you're grateful for"
     ],
     "meditate": [
-      "5 minutes — close your eyes, just breathe",
+      "5 minutes \u2014 close your eyes, just breathe",
       "No phone before this"
     ],
     "journal": [
@@ -42,7 +42,7 @@
     ],
     "read": [
       "8 pages of Code by Petzold",
-      "No distractions — just the book"
+      "No distractions \u2014 just the book"
     ],
     "learn": [
       "Read today's article (link in your morning text)"
@@ -59,19 +59,19 @@
     ],
     "coldShower": [
       "End your shower with 30 seconds cold",
-      "Just breathe through it — it gets easier"
+      "Just breathe through it \u2014 it gets easier"
     ],
     "stretch": [
-      "5–10 minutes — neck, shoulders, hips, hamstrings",
+      "5\u201310 minutes \u2014 neck, shoulders, hips, hamstrings",
       "Do it right after you wake up or before bed"
     ],
     "yoga": [
-      "20 min beginner session — YouTube: 'Yoga With Adriene for Beginners'",
+      "20 min beginner session \u2014 YouTube: 'Yoga With Adriene for Beginners'",
       "Don't overthink it, just follow along"
     ],
     "retainer": [
       "Wear it for {{retainer_hours}} hour{{retainer_plural}} today",
-      "Cap is 5 hours — you're building up to it"
+      "Cap is 5 hours \u2014 you're building up to it"
     ],
     "value": [
       "Worked on PA, Web Studio, or Punksierge",
@@ -79,11 +79,11 @@
     ],
     "weedFree": [
       "You're resetting. Don't.",
-      "If the urge hits — do 20 push-ups instead"
+      "If the urge hits \u2014 do 20 push-ups instead"
     ],
     "phone": [
       "No phone for first 20 min after waking",
-      "Log your screen time below — goal: under 9h"
+      "Log your screen time below \u2014 goal: under 9h"
     ],
     "noPorn": [
       "Don't. You already know why."
@@ -91,13 +91,13 @@
   },
   "articles": [
     {
-      "title": "Why Decentralization Matters",
-      "url": "https://onezero.medium.com/why-decentralization-matters-5e3f79f7638e",
-      "source": "Chris Dixon (a16z)",
+      "title": "Ethereum \u2014 How the World Computer Works",
+      "url": "https://en.wikipedia.org/wiki/Ethereum",
+      "source": "Wikipedia",
       "topic": "Crypto / Web3"
     },
     {
-      "title": "Status as a Service — How Social Networks Really Work",
+      "title": "Status as a Service \u2014 How Social Networks Really Work",
       "url": "https://www.eugenewei.com/blog/2019/2/19/status-as-a-service",
       "source": "Eugene Wei",
       "topic": "Brand / Social"
@@ -109,9 +109,9 @@
       "topic": "Politics / Economics"
     },
     {
-      "title": "Why Supreme Is Worth $1 Billion",
-      "url": "https://www.businessoffashion.com/articles/retail/how-supreme-conquered-the-world",
-      "source": "Business of Fashion",
+      "title": "Supreme: The Rise of a $2.1B Streetwear Empire",
+      "url": "https://en.wikipedia.org/wiki/Supreme_(brand)",
+      "source": "Wikipedia",
       "topic": "Streetwear / Brand"
     },
     {
@@ -121,45 +121,45 @@
       "topic": "Business Strategy"
     },
     {
-      "title": "An Introduction to CryptoPunks — The Original NFT",
-      "url": "https://decrypt.co/33828/cryptopunks-complete-guide",
-      "source": "Decrypt",
+      "title": "CryptoPunks \u2014 The NFT That Started It All",
+      "url": "https://en.wikipedia.org/wiki/CryptoPunks",
+      "source": "Wikipedia",
       "topic": "Crypto / NFTs"
     },
     {
       "title": "Do Things That Don't Scale",
       "url": "http://paulgraham.com/ds.html",
       "source": "Paul Graham",
-      "topic": "⭐ Weekly Motivational"
+      "topic": "\u2b50 Weekly Motivational"
     },
     {
       "title": "How the Federal Reserve Actually Works",
-      "url": "https://www.stlouisfed.org/in-plain-english/the-fed-and-interest-rates",
-      "source": "St. Louis Fed",
+      "url": "https://en.wikipedia.org/wiki/Federal_Reserve",
+      "source": "Wikipedia",
       "topic": "Economics / Politics"
     },
     {
-      "title": "Vitalik Buterin: The Meaning of Decentralization",
-      "url": "https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274",
+      "title": "Endgame \u2014 Vitalik Buterin on Ethereum's Future",
+      "url": "https://vitalik.eth.limo/general/2021/12/06/endgame.html",
       "source": "Vitalik Buterin",
       "topic": "Crypto / Web3"
     },
     {
-      "title": "How Streetwear Went From the Streets to the Runway",
-      "url": "https://www.nytimes.com/2019/02/13/t-magazine/streetwear-history.html",
-      "source": "NY Times",
+      "title": "Streetwear: From the Sidewalk to the Runway",
+      "url": "https://en.wikipedia.org/wiki/Streetwear",
+      "source": "Wikipedia",
       "topic": "Streetwear / Culture"
     },
     {
-      "title": "1,000 True Fans — The Math Behind a Real Business",
+      "title": "1,000 True Fans \u2014 The Math Behind a Real Business",
       "url": "https://kk.org/thetechnium/1000-true-fans/",
       "source": "Kevin Kelly",
       "topic": "Brand Building"
     },
     {
-      "title": "The Rise and Fall of the Petro-States",
-      "url": "https://foreignpolicy.com/2020/04/22/oil-price-collapse-saudi-arabia-russia-opec/",
-      "source": "Foreign Policy",
+      "title": "OPEC and the Politics of Oil",
+      "url": "https://en.wikipedia.org/wiki/OPEC",
+      "source": "Wikipedia",
       "topic": "Politics / Oil"
     },
     {
@@ -172,79 +172,79 @@
       "title": "How to Get Rich (No Luck Required)",
       "url": "https://nav.al/rich",
       "source": "Naval Ravikant",
-      "topic": "⭐ Weekly Motivational"
+      "topic": "\u2b50 Weekly Motivational"
     },
     {
-      "title": "How Off-White Built a Billion Dollar Streetwear Empire",
-      "url": "https://hypebeast.com/2021/11/off-white-virgil-abloh-legacy-retrospective",
-      "source": "Hypebeast",
+      "title": "Virgil Abloh and the Legacy of Off-White",
+      "url": "https://en.wikipedia.org/wiki/Virgil_Abloh",
+      "source": "Wikipedia",
       "topic": "Streetwear / Brand"
     },
     {
-      "title": "Dollar Dominance: What Happens When It Ends?",
-      "url": "https://www.cfr.org/backgrounder/dollar-dominance-international-finance",
-      "source": "Council on Foreign Relations",
+      "title": "Reserve Currency: Why the Dollar Runs the World",
+      "url": "https://en.wikipedia.org/wiki/Reserve_currency",
+      "source": "Wikipedia",
       "topic": "Politics / Economics"
     },
     {
-      "title": "The Smart Money Concept Explained (SMC Trading)",
-      "url": "https://www.investopedia.com/smart-money-concept-7549455",
-      "source": "Investopedia",
+      "title": "Smart Money \u2014 What It Is and How It Moves Markets",
+      "url": "https://en.wikipedia.org/wiki/Smart_money",
+      "source": "Wikipedia",
       "topic": "Investing / Trading"
     },
     {
-      "title": "A History of Bitcoin — From Pizza to $1 Trillion",
-      "url": "https://decrypt.co/36125/bitcoin-history-price-since-2009",
-      "source": "Decrypt",
+      "title": "Bitcoin \u2014 A Complete History",
+      "url": "https://en.wikipedia.org/wiki/Bitcoin",
+      "source": "Wikipedia",
       "topic": "Crypto / Bitcoin"
     },
     {
-      "title": "How Kanye Turned Yeezy Into a $1.5B Brand",
-      "url": "https://www.businessoffashion.com/articles/retail/the-business-of-yeezy",
-      "source": "Business of Fashion",
+      "title": "Yeezy: How Kanye Built a Billion-Dollar Brand",
+      "url": "https://en.wikipedia.org/wiki/Yeezy_(brand)",
+      "source": "Wikipedia",
       "topic": "Streetwear / Brand"
     },
     {
       "title": "The Pmarca Guide to Startups",
       "url": "https://pmarchive.com/guide_to_startups_part1.html",
       "source": "Marc Andreessen",
-      "topic": "⭐ Weekly Motivational"
+      "topic": "\u2b50 Weekly Motivational"
     },
     {
-      "title": "What Is Happening to the Middle East (and Why Oil Matters)",
-      "url": "https://www.economist.com/middle-east-and-africa",
-      "source": "The Economist",
-      "topic": "Politics / World"
+      "title": "The 2021\u20132023 Oil Supply Crisis Explained",
+      "url": "https://en.wikipedia.org/wiki/2021%E2%80%932023_global_energy_crisis",
+      "source": "Wikipedia",
+      "topic": "Politics / Energy"
     },
     {
-      "title": "How Options Work — A Plain English Guide",
-      "url": "https://www.investopedia.com/options-basics-tutorial-4583012",
-      "source": "Investopedia",
+      "title": "How Options Work \u2014 Calls, Puts, and Why It Matters",
+      "url": "https://en.wikipedia.org/wiki/Option_(finance)",
+      "source": "Wikipedia",
       "topic": "Investing / Options"
     },
     {
-      "title": "The Solana vs Ethereum Debate",
-      "url": "https://coinmarketcap.com/alexandria/article/solana-vs-ethereum",
-      "source": "CoinMarketCap",
+      "title": "Solana vs Ethereum \u2014 The Battle for Web3",
+      "url": "https://en.wikipedia.org/wiki/Solana_(blockchain_platform)",
+      "source": "Wikipedia",
       "topic": "Crypto / Web3"
     },
     {
-      "title": "Why Tariffs Are Back and What It Means for You",
-      "url": "https://www.brookings.edu/articles/what-everyone-should-know-about-trade-policy/",
-      "source": "Brookings Institution",
+      "title": "Tariffs: What They Are and Why They Matter",
+      "url": "https://en.wikipedia.org/wiki/Tariff",
+      "source": "Wikipedia",
       "topic": "Politics / Trade"
     },
     {
-      "title": "How Travis Scott Built Cactus Jack Into a Movement",
-      "url": "https://hypebeast.com/2021/4/travis-scott-cactus-jack-brand-identity-explainer",
-      "source": "Hypebeast",
+      "title": "Travis Scott and the Cactus Jack Brand Universe",
+      "url": "https://en.wikipedia.org/wiki/Travis_Scott",
+      "source": "Wikipedia",
       "topic": "Streetwear / Culture"
     },
     {
       "title": "The Psychology of Money",
       "url": "https://collabfund.com/blog/the-psychology-of-money/",
       "source": "Morgan Housel",
-      "topic": "⭐ Weekly Motivational"
+      "topic": "\u2b50 Weekly Motivational"
     },
     {
       "title": "What Happens to an Economy When Oil Gets Cheap",
